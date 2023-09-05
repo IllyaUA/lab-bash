@@ -1,0 +1,32 @@
+**Explanation on Git / GitHub and Version Control**
+
+Git (GitHub is similar but stores files in the cloud, while Git works locally on your PC) is a tool used to manage source code or any digital files. Its core principle is version control, which helps you track changes made to digital files, such as code or documents, over time. Git allows you to:
+
+- Record changes: You can save different versions of your work, creating a history of edits.
+- Collaborate: Multiple people can work on the same project without conflicts, and Git helps merge their changes.
+- Backup: It serves as a backup system, enabling you to recover previous versions if something goes wrong.
+
+In essence, Git acts as a time machine for your digital work, facilitating effective project management and collaboration.
+
+Here's how Git works:
+1. You have a folder you want to track for changes, ensuring nothing is lost forever.
+2. Inside this folder, you execute "git init," signaling Git to:
+   - Mark this folder (and its subfolders) for tracking, making it a "working copy."
+   - Create a repository (repo) in the background, where it stores all files from your working folder in an indexed manner. When you commit, this created repo is called "master" or "trunk."
+3. To add files to the "working copy," use "git add <filename>" inside your folder. To add everything, use "git add ."; this marks and indexes the files.
+4. To commit to the repo, use "git commit -m "comment on commit"" to inform Git to check for changes, upload, and index modified or newly added files.
+
+Now, let's clarify some terms:
+- Fork is equivalent to a branch. It's useful when you want to create a copy of a repository. First, this copy is created in a protected place, and then you can checkout from this new branch to another folder associated with this fork/branch.
+
+- Clone creates a copy of the repository and checks it out into another folder.
+
+For the GitHub | Lab:
+1. Create or already have an account on GitHub.
+2. Access the Lab via the link provided in the student portal.
+3. Click the "Fork" button in the upper-right corner, just above the big green "Code" button. This automatically creates a fork/branch in YOUR GitHub space and switches you to your GitHub space.
+4. On your GitHub page, click the big green "Code" button and copy the link to this "Fork" of the Lab.
+5. Switch to your local PC and, in the GitBash terminal, navigate to the folder where you want to create a local working copy of the forked repo using the "cd" command. For example: `$ cd Ironhack/Week_1/Day_1/Morning/`
+6. There, execute `git clone https://github.com/username/repo.git`, replacing the path with the one copied from GitHub. This creates a local copy of the repo from the GitHub cloud to your local folder, allowing you to work using Git commands.
+
+After making changes, execute "git add ." in the root of your working copy (e.g., `C:\Users\i.glavatskyi\Ironhack\Week_1\Day_1\Morning`) to add all new files. Then, commit using "git commit" and push using "git push" to upload the committed changes to GitHub. Finally, navigate to your GitHub, find the "Solution.txt" file, copy its link, and paste it in the appropriate field on the Student portal.

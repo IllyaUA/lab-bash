@@ -1,0 +1,119 @@
+Explanation on Git / GitHub and version controlling
+
+basically Git (GitHub is same but stores in the cloud) is a tool to manage the source code, well anything
+any files I mean. The core principle of Git is version control, which means it helps you keep track of changes made to digital files (like code or documents) over time. It allows you to:
+Record changes: You can save different versions of your work, creating a history of edits.
+Collaborate: Multiple people can work on the same project without conflicts, and Git helps merge their changes.
+Backup: It serves as a backup system, so you can recover previous versions if something goes wrong.
+In short, Git is like a time machine for your digital work, helping you manage and collaborate on projects effectively.
+so it works as follows - you have a folder that you want to track any changes, so that nothing never will be lost forever. inside this folder you execute "git init", which calls Git and tells it to: 1. mark this folder ( and subfolders) as those to be tracked, making it "working copy". 2. Git creates (somewhere, you'd better not know where and how) the repository - a cached folder where it stores all files from your working folder in an indexed manner, when you commit the created repo is called "master" or "trunk". in order to add files in that "working copy" you do "git add  <filename>" inside your folder. to add EVERYTHING you do "git add ." - it marks the files first and indexes them. only. to commit to the repo you do "git commit -m "comment on commit"" this tells Git to check what has changed and upload + index modified or newly added files
+
+Fork=Branch. It is needed when you want to create a copy of the repository, first - somewhere "there" in a hidden protected place Then you have to checkout from this new branch to some new / another folder, which will be associated with this fork/branch.
+
+Clone. This creates a copy of the repo and checks out to new another folder.
+
+For the GitHub | Lab this means you first created / already have created an account on the GitHub. then you go to the Lab following the Link rpovided on the student portal and very simple - push the button "Fork" in the upper-right corner, a bit above the big Green button <Code>. This automatically creates a fork/branch on YOUR GitHub space and switches you to your GitHub space. there you have to clikc the Hulk, I mean the Big Green button <Code> and from the menu window copy the link to this "Fork" of the Lab then you switch to your local PC, and in the GitBash terminal navigate to the folder where you want the forked repo to create the local working copy, using the "cd" command: "$ cd Ironhack/Week_1/Day_1/Morning/" - there you do: git clone https://github.com/username/repo.git , with the path you copied on GitHub. this creates a clone / local copy of the repo on the GitHub cloud to your local folder, so you can work there now following instructions suing Git commands.
+
+you create a Solution.txt file as mentioned and after all steps this be like:
+
+++++
+# Exercises
+$ cd ./Ironhack/Week_1/Day_1/Morning
+#
+#1.Using the echo command print in console "Hello World".
+#Solution:
+$ echo "Hello World"
+#
+#2.Create a new directory called new_dir
+#Solution:
+$ mkdir new_dir
+#
+#3.Delete/Remove the directory new_dir.
+#Solution:
+$ rm -rf new_dir
+#
+#4.Copy the file sed.txt from the lorem folder and paste it to the folder lorem-copy folder.
+#Solution:
+$ cp ./lorem/sed.txt ./lorem-copy/
+#
+#5.Copy the other two files from the lorem folder to lorem-copy folder in just one line using semicolon ;.
+#Solution 1:
+$ cp ./lorem/at.txt ./lorem/at.txte ./lorem-copy/
+#Solution 2:
+$ cp ./lorem/at.txt ./lorem-copy/ ; ./lorem/at.txte ./lorem-copy/
+#
+#6.Show the sed.txt file content from the lorem folder.
+#Solution:
+$ cat ./lorem/sed.txt
+#
+#7.Show the at.txt file and lorem.txt file contents from lorem folder.
+#Solution:
+$ cat ./lorem/at.txt ./lorem/lorem.txt
+#
+#8.Print the first 3 rows in sed.txt file from lorem-copy folder.
+#Solution:
+$ head -n 3 ./lorem-copy/sed.txt
+#
+#9.Print the last 3 rows in sed.txt file from lorem-copy folder.
+#Solution:
+$ tail -n 3 ./lorem-copy/sed.txt
+#
+#10.Add Homo homini lupus. at the end of sed.txt file in the lorem-copy folder.
+#Solution:
+$ echo -e "\nHomo homini lupus." >> ./lorem-copy/sed.txt
+#
+#11.Print the last 3 rows in sed.txt file from lorem-copy folder. You should see Homo homini lupus..
+#Solution:
+$ tail -n 3 ./lorem-copy/sed.txt
+#
+##12.sed command is used to replace the text in a file. Use the sed command to replace all occurances of et with ET in the file at.txt file present in the folder lorem. You can use the following link to refer to sed commands [https://www.linode.com/docs/guides/manipulate-text-from-the-command-line-with-sed/] Check the contents of the sed.txt file using cat command.
+#Solution:
+$ sed -i 's/et/ET/g' lorem/at.txt
+#
+#13.Find who is the system user.
+#Solution:
+$ whoami
+#
+#14.Find the current path of the directory you are in.
+#Solution:
+$ pwd
+/c/Users/i.glavatskyi/Ironhack/Week_1/Day_1/Morning
+#
+#15.List all files with the extension .txt in lorem folder.
+#Solution:
+$ ls lorem/*.txt
+lorem/at.txt  lorem/lorem.txt  lorem/sed.txt
+#
+#16.Count the rows in sed.txt file from lorem folder. Look concatenate cat and wc with the pipe |.
+#Solution:
+$ cat lorem/sed.txt | wc -l
+9
+#
+#17.Count the files which start with lorem in all directories.
+#Solution:
+$ find . -type f -name "lorem*"
+./lorem/lorem.txt
+#
+#20.Store your name in a variable with read command.
+#21.Print that variable.
+#Solution:
+$ echo "Please enter your name:"
+read name
+echo "Hello, $name! Nice to meet you."
+Please enter your name:
+Illia
+Hello, Illia! Nice to meet you.
+#
+#22.Create a new directory named with variable name.
+#23.Remove that directory.
+#Solution:
+$ mkdir $name
+ls
+rm -rf $name
+ls
++++++++++
+
+when done you execute "git add ." in the root of your working copy, i.e. C:\Users\i.glavatskyi\Ironhack\Week_1\Day_1\Morning to add all new files and then "git commit" - to commit + "git push" to upload the commited to the GitHub. 
+finally navigate to your GitHub, find there the "Solution.txt" file and copy a link to it, then paste the Link in the Sutdent portal appropriate field.
+
+voilà!
